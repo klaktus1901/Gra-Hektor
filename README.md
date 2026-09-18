@@ -29,3 +29,16 @@
 ## Mapa
 - Mapa obejmuje dom, który jest nie wielki, oraz 3 poziomy piwnicy, które są bardziej obszerne.
 - Na każdym niższym piętrze piwnicy, graczowi są ukazywane wspomnienia Hektora z wojny (najprawdopodobniej jako grywalna część gry), a po tym wraca do teraźniejszości.
+
+## Narzędzia z których będziemy korzystać:
+- Godot Engine do robienia gry.
+- FL studio do robienia muzyki.
+- MP3Gain do wyrównania poziomu głośności wszelakich plików dźwiękowych.
+
+## Assety i ich autorzy:
+### Modele 3D
+
+### SFX
+
+## Nie-autorskie elementy gry
+*Np. Jak jakiś element kodu pisałem za pomocą AI, wziąłem skądś (czego postaram się unikać), lub wziąłem jakąś mechanikę czy cokolwiek z innych projektów, wspomnę o tym tutaj.*
