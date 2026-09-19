@@ -34,6 +34,7 @@
 - Godot Engine do robienia gry.
 - FL studio do robienia muzyki.
 - MP3Gain do wyrównania poziomu głośności wszelakich plików dźwiękowych.
+- Blender do optymalizowania (np. scalania), lub zmieniania modeli.
 
 ## Assety i ich autorzy:
 ### Modele 3D
