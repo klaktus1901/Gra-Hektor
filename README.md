@@ -2,9 +2,9 @@
 
 ## Mechaniki
 ### Aparat jako źródło nawigacji
-- Aparatem robisz zdjęcia wraz z flashem, możesz podejrzeć zdjęcie przez chwilę aby zapamiętać layout któremu zdjęcie zrobiłeś.
-- Jeżeli Hektor goni gracza, można robić zdjęcia bez podglądu, tylko flash.
-- Tryb aparatu będzie kontrolować gracz, nie gra.
+- Aparatem robisz zdjęcia wraz z flashem, który podświetla przez chwilę obszar, w kierunku którym robiłeś zdjęcie.
+- Lewym robisz samo zdjęcie z flashem.
+- Przytrzymując prawy podglądasz ostatnio zrobione zdjęcie, dopóki go nie puścisz.
 - Sama gra ma bardzo małą ilość świateł, przez co aparat stanie się niezbędny.
 
 ### Ślepy antagonista
