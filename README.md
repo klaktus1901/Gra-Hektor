@@ -66,5 +66,7 @@
 
 ### SFX
 
+#### AmbientCG do tekstur.
+
 ## Nie-autorskie elementy gry
 *Np. Jak jakiś element kodu pisałem za pomocą AI, wziąłem skądś (czego postaram się unikać), lub wziąłem jakąś mechanikę czy cokolwiek z innych projektów, wspomnę o tym tutaj.*
