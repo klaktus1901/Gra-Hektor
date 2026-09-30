@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://c3lugg0r6k86q"]
+
+[ext_resource type="Script" uid="uid://cvl5yr3wivay8" path="res://scenes/menu.gd" id="1_yqeox"]
+[ext_resource type="Sky" uid="uid://d3inol0lqe7oq" path="res://textures/sky/NightSkyHDRI001_4K/NightSkyHDRI001_4K.tres" id="2_mhnvy"]
+[ext_resource type="Material" uid="uid://biwba0fcryctl" path="res://textures/ground and floor/Grass005_1K-JPG/Grass005_1K-JPG.tres" id="2_vjb58"]
+[ext_resource type="Shader" uid="uid://c2d3uribo4enu" path="res://shaders/pixelate.gdshader" id="3_mhnvy"]
+
+[sub_resource type="Environment" id="Environment_g3eks"]
+background_mode = 2
+sky = ExtResource("2_mhnvy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vjb58"]
+emission_shape = 3
+emission_box_extents = Vector3(10, 0.5, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_con2f"]
+albedo_color = Color(0.06622318, 0.50172365, 0.99999994, 1)
+roughness = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_mhnvy"]
+material = SubResource("StandardMaterial3D_con2f")
+size = Vector3(0.01, 0.3, 0.01)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4ytvr"]
+shader = ExtResource("3_mhnvy")
+shader_parameter/pixel_size = 2
+shader_parameter/screen_size = Vector2(1920, 1080)
+
+[sub_resource type="Animation" id="Animation_yqeox"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5707964, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.1192884, 1.9620547)]
+}
+
+[sub_resource type="Animation" id="Animation_vjb58"]
+resource_name = "intro"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 5.966667, 10.000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.5707964, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.34906584, 0.34906584, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 5.966667, 10.000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.1192884, 1.9620547), Vector3(0, 1.1192884, 1.9620547), Vector3(0, 1.1192884, 1.9620547), Vector3(0, 1.1192884, -0.9509039)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_con2f"]
+_data = {
+&"RESET": SubResource("Animation_yqeox"),
+&"intro": SubResource("Animation_vjb58")
+}
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yqeox"]
+material = ExtResource("2_vjb58")
+size = Vector2(10, 15)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhnvy"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4ytvr"]
+material = SubResource("StandardMaterial3D_mhnvy")
+size = Vector3(1.5, 0.4, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g3eks"]
+size = Vector3(1.5, 0.4, 0.1)
+
+[node name="Menu" type="Node3D" unique_id=439643023]
+script = ExtResource("1_yqeox")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=790639036]
+environment = SubResource("Environment_g3eks")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1992807990]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5215607, 0)
+emitting = false
+amount = 1000
+process_material = SubResource("ParticleProcessMaterial_vjb58")
+draw_pass_1 = SubResource("BoxMesh_mhnvy")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1079031366]
+transform = Transform3D(0.99999994, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 1.1192884, 1.9620547)
+
+[node name="ColorRect" type="ColorRect" parent="Camera3D" unique_id=1275088291]
+material = SubResource("ShaderMaterial_4ytvr")
+offset_right = 1910.0
+offset_bottom = 1080.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2115153035]
+libraries/ = SubResource("AnimationLibrary_con2f")
+
+[node name="map" type="StaticBody3D" parent="." unique_id=1541865770]
+
+[node name="meshs" type="Node3D" parent="map" unique_id=633374682]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="map/meshs" unique_id=1549038061]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.4564657)
+mesh = SubResource("PlaneMesh_yqeox")
+
+[node name="hitboxs" type="StaticBody3D" parent="map" unique_id=1985463422]
+
+[node name="button" type="StaticBody3D" parent="." unique_id=699400309]
+transform = Transform3D(0.9396926, 0.116977766, 0.3213938, 0, 0.9396926, -0.34202012, -0.34202012, 0.3213938, 0.8830222, -1.445, 2.199, -2.3)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="button" unique_id=1869150867]
+mesh = SubResource("BoxMesh_4ytvr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="button" unique_id=101762514]
+shape = SubResource("BoxShape3D_g3eks")
+
+[node name="Label3D" type="Label3D" parent="button" unique_id=1288067392]
+transform = Transform3D(1, 0, 5.9604645e-08, 0, 1, -5.9604645e-08, 0, 0, 1, -0.019378662, 0.018209815, 0.050031185)
+modulate = Color(0, 0, 0, 1)
+text = "Graj"
+font_size = 40
+outline_size = 0
+
+[connection signal="input_event" from="button" to="." method="_on_button_input_event"]
