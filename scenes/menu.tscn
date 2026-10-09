@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c3lugg0r6k86q"]
 
-[ext_resource type="Script" uid="uid://cvl5yr3wivay8" path="res://scenes/menu.gd" id="1_yqeox"]
+[ext_resource type="Script" uid="uid://cvl5yr3wivay8" path="res://scripts/menu.gd" id="1_yqeox"]
 [ext_resource type="Sky" uid="uid://d3inol0lqe7oq" path="res://textures/sky/NightSkyHDRI001_4K/NightSkyHDRI001_4K.tres" id="2_mhnvy"]
 [ext_resource type="Material" uid="uid://biwba0fcryctl" path="res://textures/ground and floor/Grass005_1K-JPG/Grass005_1K-JPG.tres" id="2_vjb58"]
 [ext_resource type="Shader" uid="uid://c2d3uribo4enu" path="res://shaders/pixelate.gdshader" id="3_mhnvy"]

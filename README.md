@@ -60,6 +60,7 @@
 - FL studio do robienia muzyki.
 - MP3Gain do wyrównania poziomu głośności wszelakich plików dźwiękowych.
 - Blender do optymalizowania (np. scalania), lub zmieniania modeli.
+- Fmod do kontrolowania dynamicznej muzyki.
 
 ## Assety i ich autorzy:
 ### Modele 3D
