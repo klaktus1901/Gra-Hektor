@@ -117,11 +117,13 @@ draw_pass_1 = SubResource("BoxMesh_mhnvy")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1079031366]
 transform = Transform3D(0.99999994, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 1.1192884, 1.9620547)
+current = true
 
 [node name="ColorRect" type="ColorRect" parent="Camera3D" unique_id=1275088291]
 material = SubResource("ShaderMaterial_4ytvr")
 offset_right = 1910.0
 offset_bottom = 1080.0
+mouse_filter = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2115153035]
 libraries/ = SubResource("AnimationLibrary_con2f")
@@ -137,13 +139,11 @@ mesh = SubResource("PlaneMesh_yqeox")
 [node name="hitboxs" type="StaticBody3D" parent="map" unique_id=1985463422]
 
 [node name="button" type="StaticBody3D" parent="." unique_id=699400309]
-transform = Transform3D(0.9396926, 0.116977766, 0.3213938, 0, 0.9396926, -0.34202012, -0.34202012, 0.3213938, 0.8830222, -1.445, 2.199, -2.3)
+transform = Transform3D(0.93969256, 0.11697775, 0.32139373, 0, 0.93969256, -0.3420201, -0.34202006, 0.32139376, 0.8830221, -1.445, 2.199, -2.3)
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="button" unique_id=1869150867]
 mesh = SubResource("BoxMesh_4ytvr")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="button" unique_id=101762514]
-shape = SubResource("BoxShape3D_g3eks")
 
 [node name="Label3D" type="Label3D" parent="button" unique_id=1288067392]
 transform = Transform3D(1, 0, 5.9604645e-08, 0, 1, -5.9604645e-08, 0, 0, 1, -0.019378662, 0.018209815, 0.050031185)
@@ -152,4 +152,10 @@ text = "Graj"
 font_size = 40
 outline_size = 0
 
-[connection signal="input_event" from="button" to="." method="_on_button_input_event"]
+[node name="Area3D" type="Area3D" parent="button" unique_id=1603781694]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="button/Area3D" unique_id=101762514]
+transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, -2.9802322e-08, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_g3eks")
+
+[connection signal="input_event" from="button/Area3D" to="." method="_on_area_3d_input_event"]
