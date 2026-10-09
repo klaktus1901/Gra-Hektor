@@ -1,0 +1,15 @@
+[gd_resource type="AudioBusLayout" format=3 uid="uid://dqcavipgshthe"]
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_68ecs"]
+resource_name = "LowPassFilter"
+cutoff_hz = 1000.0
+
+[resource]
+bus/1/name = &"in_home"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectLowPassFilter_68ecs")
+bus/1/effect/0/enabled = true

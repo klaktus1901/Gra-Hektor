@@ -13,17 +13,17 @@ sky = ExtResource("2_mhnvy")
 emission_shape = 3
 emission_box_extents = Vector3(10, 0.5, 10)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_con2f"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhnvy"]
 albedo_color = Color(0.06622318, 0.50172365, 0.99999994, 1)
 roughness = 0.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_mhnvy"]
-material = SubResource("StandardMaterial3D_con2f")
+material = SubResource("StandardMaterial3D_mhnvy")
 size = Vector3(0.01, 0.3, 0.01)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4ytvr"]
 shader = ExtResource("3_mhnvy")
-shader_parameter/pixel_size = 2
+shader_parameter/pixel_size = 4
 shader_parameter/screen_size = Vector2(1920, 1080)
 
 [sub_resource type="Animation" id="Animation_yqeox"]
@@ -91,15 +91,12 @@ _data = {
 material = ExtResource("2_vjb58")
 size = Vector2(10, 15)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhnvy"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ytvr"]
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4ytvr"]
-material = SubResource("StandardMaterial3D_mhnvy")
-size = Vector3(1.5, 0.4, 0.1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_g3eks"]
+material = SubResource("StandardMaterial3D_4ytvr")
 size = Vector3(1.5, 0.4, 0.1)
 
 [node name="Menu" type="Node3D" unique_id=439643023]
@@ -124,6 +121,7 @@ material = SubResource("ShaderMaterial_4ytvr")
 offset_right = 1910.0
 offset_bottom = 1080.0
 mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2115153035]
 libraries/ = SubResource("AnimationLibrary_con2f")
@@ -151,11 +149,3 @@ modulate = Color(0, 0, 0, 1)
 text = "Graj"
 font_size = 40
 outline_size = 0
-
-[node name="Area3D" type="Area3D" parent="button" unique_id=1603781694]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="button/Area3D" unique_id=101762514]
-transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, -2.9802322e-08, 0, 0, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_g3eks")
-
-[connection signal="input_event" from="button/Area3D" to="." method="_on_area_3d_input_event"]

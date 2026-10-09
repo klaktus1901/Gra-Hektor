@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://caeo4dvyb824v"]
+
+[ext_resource type="Shader" uid="uid://c2d3uribo4enu" path="res://shaders/pixelate.gdshader" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://18j2uk2h6emi" path="res://scripts/player.gd" id="1_g2els"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g2els"]
+shader = ExtResource("1_3vyb7")
+shader_parameter/pixel_size = 4
+shader_parameter/screen_size = Vector2(1920, 1080)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vkqoe"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qhqgy"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1458050832]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_g2els")
+
+[node name="camera_controler" type="Node3D" parent="." unique_id=434925629]
+
+[node name="Camera3D" type="Camera3D" parent="camera_controler" unique_id=1550756691]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+current = true
+
+[node name="ColorRect" type="ColorRect" parent="camera_controler/Camera3D" unique_id=2011749222]
+material = SubResource("ShaderMaterial_g2els")
+offset_right = 1910.0
+offset_bottom = 1080.0
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="FmodListener2D" type="FmodListener2D" parent="camera_controler/Camera3D" unique_id=1385511472]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=642237192]
+mesh = SubResource("CapsuleMesh_vkqoe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1983264935]
+shape = SubResource("CapsuleShape3D_qhqgy")

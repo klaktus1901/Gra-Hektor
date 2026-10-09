@@ -64,13 +64,21 @@
 
 ## Wtyczki:
 - Developer Console by jitspoe
+- 
 
 ## Assety i ich autorzy:
+
+### Kod
+- Podstawowy ruch gracza i camera bob: FirstPersonController by LegionGames
+
 ### Modele 3D
 
 ### SFX
 
 #### AmbientCG do tekstur.
+*Udostępnia swoje tekstury na licencji CC0, czyli nie muszę oznaczać ich autorów.*
+#### pixabay do dźwięków.
+*Udostępnia większość swoich dźwięków na licencji pixbay, w której też nie trzeba oznaczać twórców, jednak są wyjątki, jeżeli takowe będę posiadał w swoim projekcie, wspomnę autorów powyżej.*
 
 ## Nie-autorskie elementy gry
 *Np. Jak jakiś element kodu pisałem za pomocą AI, wziąłem skądś (czego postaram się unikać), lub wziąłem jakąś mechanikę czy cokolwiek z innych projektów, wspomnę o tym tutaj.*
