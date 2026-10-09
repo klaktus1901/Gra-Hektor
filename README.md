@@ -62,6 +62,9 @@
 - Blender do optymalizowania (np. scalania), lub zmieniania modeli.
 - Fmod do kontrolowania dynamicznej muzyki.
 
+## Wtyczki:
+- Developer Console by jitspoe
+
 ## Assety i ich autorzy:
 ### Modele 3D
 
