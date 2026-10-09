@@ -64,7 +64,7 @@
 
 ## Wtyczki:
 - Developer Console by jitspoe
-- 
+- fmod-gdextension by utopia-rise
 
 ## Assety i ich autorzy:
 
