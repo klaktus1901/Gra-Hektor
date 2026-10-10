@@ -10,7 +10,7 @@
 ### Ślepy antagonista
 - Hektor jest ślepy, ale słyszy.
 - Hektor zawsze idzie do ostatniego, usłyszanego źródła nieznanego dźwięku.
-- Gra podświadomie podsyła przybliżoną pozycję gracza, aby gracz nie mógł go unikać.
+- Gra podświadomie podsyła przybliżoną pozycję gracza, aby gracz nie mógł go unikać. Gra wybiera jeden pokój w okół pokoi, w którym znajduje się gracz i tam się kieruje.
 
 ### Cel gry
 - Gracz ma znaleźć przyjaciela i z nim uciec.
