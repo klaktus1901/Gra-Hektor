@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://85neau1g6rh4"]
+
+[ext_resource type="PackedScene" uid="uid://bc4gofah3nu71" path="res://models/hektor/army_soldier_character.glb" id="1_h5js3"]
+
+[node name="Sketchfab_Scene" unique_id=241296527 instance=ExtResource("1_h5js3")]
+
+[node name="Object_6" parent="Sketchfab_model/1f95aa14eaab4b36b574bace937b9ced_fbx/Object_2/RootNode/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(1532559238) index="0" unique_id=188262935]
+visible = false

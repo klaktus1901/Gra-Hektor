@@ -10,6 +10,7 @@ var walk_speed = 2.0
 var crouch_speed = 1.0
 var jump_velocity = 3.0
 var camera_sensitivity = 0.0015
+var camera_start_position: Vector3
 
 const bob_freq = 4.0
 const bob_amp = 0.03
@@ -18,6 +19,7 @@ var t_bob = 0.0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready() -> void:
+	camera_start_position = camera.position
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _unhandled_input(event):
@@ -36,11 +38,9 @@ func _physics_process(delta):
 	if Input.is_action_pressed("sprint"):
 		speed = sprint_speed
 	elif Input.is_action_pressed("kucanie"):
-		$MeshInstance3D.mesh.height = 1.0
 		$CollisionShape3D.shape.height = 1.0
 		speed = crouch_speed
 	else:
-		$MeshInstance3D.mesh.height = 2.0
 		$CollisionShape3D.shape.height = 2.0
 		speed = walk_speed
 
@@ -58,7 +58,7 @@ func _physics_process(delta):
 		velocity.z = lerp(velocity.z, direction.z * speed, delta * 3.0)
 	
 	t_bob += delta * velocity.length() * float(is_on_floor())
-	camera.transform.origin = _headbob(t_bob)
+	camera.position = camera_start_position + _headbob(t_bob)
 	
 	move_and_slide()
 

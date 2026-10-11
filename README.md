@@ -72,6 +72,12 @@
 - Podstawowy ruch gracza i camera bob: FirstPersonController by LegionGames
 
 ### Modele 3D
+- M1 Steel Helmet w/Net - SimplyK - https://sketchfab.com/3d-models/m1-steel-helmet-wnet-84ef96a9e6f14695999d6b2caca7bca6
+- FN Browning Baby gameready (old model) - John Machine - https://sketchfab.com/3d-models/fn-browning-baby-gameready-old-model-64a9ed1dab094e279f4777530d31e4c0
+- Vendetta Mask - mathewdc - https://sketchfab.com/3d-models/vendetta-mask-3f7f3d843930459aad28bb790c9ed9a8
+- Army soldier Character - joneborden123 - https://sketchfab.com/3d-models/army-soldier-character-cc995450452744ec8f852d8bf5f335d6
+- Outlast Camera - Eveston - Elite Big Speakerman - Hugo - https://sketchfab.com/3d-models/outlast-camera-6bb7d3475e8b47048a439cea1790ac67
+- FP arms - DJMaesen - https://sketchfab.com/3d-models/fp-arms-06ee1407117d4e5ab343becb4ee44bb6
 
 ### SFX
 

@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bg2ta3w5wt7g8"]
+
+[ext_resource type="PackedScene" uid="uid://bfb1xflqvuows" path="res://models/arms/fp_arms.glb" id="1_kgv6p"]
+
+[node name="Sketchfab_Scene" unique_id=314033312 instance=ExtResource("1_kgv6p")]
+
+[node name="CCDIK3D" type="JacobianIK3D" parent="Sketchfab_model/539a16fce09c4bb0adf139de37cb7aca_fbx/RootNode/root/Object_4/Skeleton3D" parent_id_path=PackedInt32Array(481984878) index="1" unique_id=318264597]
+transform = Transform3D(1, 0, 0, 0, -1.6292067e-07, -1, 0, 1, -1.6292067e-07, 0, 0, 0)
+setting_count = 4
+settings/0/target_node = NodePath("../../left first")
+settings/1/target_node = NodePath("../../left last")
+settings/2/target_node = NodePath("../../right first")
+settings/3/target_node = NodePath("../../right last")
+settings/0/root_bone_name = "arm.L_01"
+settings/0/root_bone = 2
+settings/0/end_bone_name = "forearm.L_03"
+settings/0/end_bone = 4
+settings/0/extend_end_bone = false
+settings/0/joint_count = 3
+settings/1/root_bone_name = "arm.L_01"
+settings/1/root_bone = 2
+settings/1/end_bone_name = "hand.L_04"
+settings/1/end_bone = 5
+settings/1/extend_end_bone = false
+settings/1/joint_count = 4
+settings/2/root_bone_name = "arm.R_021"
+settings/2/root_bone = 27
+settings/2/end_bone_name = "forearm.R_023"
+settings/2/end_bone = 29
+settings/2/extend_end_bone = false
+settings/2/joint_count = 3
+settings/3/root_bone_name = "arm.R_021"
+settings/3/root_bone = 27
+settings/3/end_bone_name = "hand.R_024"
+settings/3/end_bone = 30
+settings/3/extend_end_bone = false
+settings/3/joint_count = 4
+settings/0/joints/0/rotation_axis = 3
+settings/0/joints/0/limitation = null
+settings/0/joints/1/rotation_axis = 3
+settings/0/joints/1/limitation = null
+settings/0/joints/2/rotation_axis = 3
+settings/0/joints/2/limitation = null
+settings/1/joints/0/rotation_axis = 3
+settings/1/joints/0/limitation = null
+settings/1/joints/1/rotation_axis = 3
+settings/1/joints/1/limitation = null
+settings/1/joints/2/rotation_axis = 3
+settings/1/joints/2/limitation = null
+settings/1/joints/3/rotation_axis = 3
+settings/1/joints/3/limitation = null
+settings/2/joints/0/rotation_axis = 3
+settings/2/joints/0/limitation = null
+settings/2/joints/1/rotation_axis = 3
+settings/2/joints/1/limitation = null
+settings/2/joints/2/rotation_axis = 3
+settings/2/joints/2/limitation = null
+settings/3/joints/0/rotation_axis = 3
+settings/3/joints/0/limitation = null
+settings/3/joints/1/rotation_axis = 3
+settings/3/joints/1/limitation = null
+settings/3/joints/2/rotation_axis = 3
+settings/3/joints/2/limitation = null
+settings/3/joints/3/rotation_axis = 3
+settings/3/joints/3/limitation = null
+
+[node name="left last" type="Marker3D" parent="Sketchfab_model/539a16fce09c4bb0adf139de37cb7aca_fbx/RootNode/root/Object_4" parent_id_path=PackedInt32Array(1895513458) index="2" unique_id=401967118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19161329, -0.3928772, 0.09001567)
+
+[node name="right last" type="Marker3D" parent="Sketchfab_model/539a16fce09c4bb0adf139de37cb7aca_fbx/RootNode/root/Object_4" parent_id_path=PackedInt32Array(1895513458) index="3" unique_id=1583992061]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12305322, -0.4475252, 0.0815333)
+
+[node name="left first" type="Marker3D" parent="Sketchfab_model/539a16fce09c4bb0adf139de37cb7aca_fbx/RootNode/root/Object_4" parent_id_path=PackedInt32Array(1895513458) index="4" unique_id=1970334013]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1810194, 0.11848376, 0.07452086)
+
+[node name="right first" type="Marker3D" parent="Sketchfab_model/539a16fce09c4bb0adf139de37cb7aca_fbx/RootNode/root/Object_4" parent_id_path=PackedInt32Array(1895513458) index="5" unique_id=1790919368]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13364711, 0.11848376, 0.07452086)
