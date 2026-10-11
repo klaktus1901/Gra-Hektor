@@ -2,9 +2,13 @@ extends CharacterBody3D
 
 @onready var camera = $camera_controler/Camera3D
 @onready var camera_controler = $camera_controler
+@onready var cam = $camera_controler/Camera3D/Sketchfab_Scene
+@onready var animations = $AnimationPlayer
 
 var speed = 1.0
 
+var can_flash = true
+var cam_equiped = false
 var sprint_speed = 3.5
 var walk_speed = 2.0
 var crouch_speed = 1.0
@@ -17,6 +21,29 @@ const bob_amp = 0.03
 var t_bob = 0.0
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+func take_photo():
+	can_flash = false
+	$camera_controler/Camera3D/Sketchfab_Scene/SpotLight3D.show()
+	$camera_controler/Camera3D/Sketchfab_Scene/SubViewport.render_target_update_mode = 1
+	await get_tree().create_timer(0.1).timeout
+	$camera_controler/Camera3D/Sketchfab_Scene/SpotLight3D.hide()
+	await get_tree().create_timer(1.0).timeout
+	can_flash = true
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("jeden"):
+		if !cam_equiped:
+			cam.show()
+			animations.play("cam_eq")
+			cam_equiped = true
+		else:
+			animations.play_backwards("cam_eq")
+			cam_equiped = false
+			await get_tree().create_timer(1.5).timeout
+			cam.hide()
+	if event.is_action_pressed("lpm") and cam_equiped and can_flash:
+		take_photo()
 
 func _ready() -> void:
 	camera_start_position = camera.position
@@ -43,7 +70,11 @@ func _physics_process(delta):
 	else:
 		$CollisionShape3D.shape.height = 2.0
 		speed = walk_speed
-
+	if Input.is_action_pressed("ppm") and cam_equiped:
+		$camera_controler/Camera3D/Sprite2D.show()
+	else:
+		$camera_controler/Camera3D/Sprite2D.hide()
+	$camera_controler/Camera3D/Sketchfab_Scene/SubViewport/Camera3D.transform = $camera_controler/Camera3D/Sketchfab_Scene/cam_position.global_transform
 	var input_dir = Input.get_vector("lewo", "prawo", "przod", "tyl")
 	var direction = (camera_controler.transform.basis * transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if is_on_floor():
