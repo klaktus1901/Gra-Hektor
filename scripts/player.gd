@@ -9,6 +9,7 @@ var speed = 1.0
 
 var can_flash = true
 var cam_equiped = false
+var can_equip = true
 var sprint_speed = 3.5
 var walk_speed = 2.0
 var crouch_speed = 1.0
@@ -33,14 +34,19 @@ func take_photo():
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("jeden"):
-		if !cam_equiped:
+		if !cam_equiped and can_equip:
+			can_equip = false
 			cam.show()
 			animations.play("cam_eq")
-			cam_equiped = true
-		else:
-			animations.play_backwards("cam_eq")
-			cam_equiped = false
 			await get_tree().create_timer(1.5).timeout
+			cam_equiped = true
+			can_equip = true
+		elif cam_equiped and can_equip:
+			can_equip = false
+			animations.play_backwards("cam_eq")
+			await get_tree().create_timer(1.5).timeout
+			cam_equiped = false
+			can_equip = true
 			cam.hide()
 	if event.is_action_pressed("lpm") and cam_equiped and can_flash:
 		take_photo()
