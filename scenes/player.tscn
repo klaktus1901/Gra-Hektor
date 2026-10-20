@@ -15,6 +15,20 @@ shader = ExtResource("2_55fey")
 shader_parameter/pixel_size = 4
 shader_parameter/screen_size = Vector2(1920, 1080)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gjxql"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 32.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_co6qv"]
+material = SubResource("StandardMaterial3D_gjxql")
+radius = 0.05
+height = 0.1
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_co6qv"]
+viewport_path = NodePath("camera_controler/Camera3D/Sketchfab_Scene/SubViewport2")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i4swr"]
 resource_name = "material"
 albedo_texture = ExtResource("3_iihjf")
@@ -329,7 +343,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9999959, 0, 0, 0, 1, 0.29753256, -0.417924
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.6299753, 1.9860325, 0.76214767)
 visible = false
 spot_range = 10.0
-spot_angle = 60.0
+spot_angle = 70.0
 
 [node name="SubViewport" type="SubViewport" parent="camera_controler/Camera3D/Sketchfab_Scene" unique_id=1520301995]
 size = Vector2i(1910, 1080)
@@ -340,6 +354,21 @@ transform = Transform3D(1, 1.09275575e-07, 8.531826e-08, 8.4517524e-08, -0.96834
 
 [node name="cam_position" type="Camera3D" parent="camera_controler/Camera3D/Sketchfab_Scene" unique_id=1891050858]
 transform = Transform3D(-0.19392043, -9.536743e-07, -22.221375, -2.5780573e-06, 22.222225, -9.536743e-07, 22.22138, 2.5629997e-06, -0.1939205, 1.9586856, 0.61627364, 0.13085794)
+
+[node name="shutter" type="MeshInstance3D" parent="camera_controler/Camera3D/Sketchfab_Scene" unique_id=1171354626]
+transform = Transform3D(1, 0, 0, -2.9802322e-08, 1, 0, 0, -3.0267984e-09, 1, -1.7063292, 0.9165921, -0.27002382)
+visible = false
+mesh = SubResource("CapsuleMesh_co6qv")
+
+[node name="Sprite3D" type="Sprite3D" parent="camera_controler/Camera3D/Sketchfab_Scene" unique_id=1801684598]
+transform = Transform3D(-1.7484556e-08, 7.450581e-09, 0.4, 1.3969839e-09, 0.4, -7.450581e-09, -0.4, 1.3969835e-09, -1.7484556e-08, 0.77741015, 0.5774641, -1.9482497)
+texture = SubResource("ViewportTexture_co6qv")
+
+[node name="SubViewport2" type="SubViewport" parent="camera_controler/Camera3D/Sketchfab_Scene" unique_id=1994151360]
+size = Vector2i(477, 270)
+
+[node name="Camera3D" type="Camera3D" parent="camera_controler/Camera3D/Sketchfab_Scene/SubViewport2" unique_id=579472186]
+transform = Transform3D(1, 1.09275575e-07, 8.531826e-08, 8.4517524e-08, -0.9683401, 0.2496347, 1.09896064e-07, -0.2496347, -0.9683401, 0.15636538, -0.083486915, 0.107482344)
 
 [node name="Sketchfab_Scene2" type="Node3D" parent="camera_controler/Camera3D" unique_id=314033312]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.24521983, 0)
