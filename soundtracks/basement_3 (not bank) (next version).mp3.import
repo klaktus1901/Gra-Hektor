@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c13xg1xmdhky3"
+path="res://.godot/imported/basement_3 (not bank) (next version).mp3-3ba911721a40b1bfe8f9bfab2c675a3e.mp3str"
+
+[deps]
+
+source_file="res://soundtracks/basement_3 (not bank) (next version).mp3"
+dest_files=["res://.godot/imported/basement_3 (not bank) (next version).mp3-3ba911721a40b1bfe8f9bfab2c675a3e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -319,6 +319,10 @@ script = ExtResource("1_glab0")
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0.8, 0)
 current = true
 
+[node name="RayCast3D" type="RayCast3D" parent="camera_controler/Camera3D" unique_id=2011798168]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+target_position = Vector3(0, -1.5, 0)
+
 [node name="Sprite2D" type="Sprite2D" parent="camera_controler/Camera3D" unique_id=297936398]
 visible = false
 position = Vector2(955, 540)
@@ -342,18 +346,18 @@ transform = Transform3D(1, 0, 0, 0, 0.9999959, 0, 0, 0, 1, 0.29753256, -0.417924
 [node name="SpotLight3D" type="SpotLight3D" parent="camera_controler/Camera3D/Sketchfab_Scene" unique_id=1132483509]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.6299753, 1.9860325, 0.76214767)
 visible = false
-spot_range = 10.0
-spot_angle = 70.0
+spot_range = 15.0
+spot_angle = 60.0
 
 [node name="SubViewport" type="SubViewport" parent="camera_controler/Camera3D/Sketchfab_Scene" unique_id=1520301995]
 size = Vector2i(1910, 1080)
 render_target_update_mode = 0
 
 [node name="Camera3D" type="Camera3D" parent="camera_controler/Camera3D/Sketchfab_Scene/SubViewport" unique_id=1880490948]
-transform = Transform3D(1, 1.09275575e-07, 8.531826e-08, 8.4517524e-08, -0.9683401, 0.2496347, 1.09896064e-07, -0.2496347, -0.9683401, 0.15636538, -0.083486915, 0.107482344)
+transform = Transform3D(1, 1.09275575e-07, 8.5318256e-08, 8.4517524e-08, -0.9683401, 0.2496347, 1.09896064e-07, -0.2496347, -0.9683401, 0.156, -0.084, 0.11)
 
 [node name="cam_position" type="Camera3D" parent="camera_controler/Camera3D/Sketchfab_Scene" unique_id=1891050858]
-transform = Transform3D(-0.19392043, -9.536743e-07, -22.221375, -2.5780573e-06, 22.222225, -9.536743e-07, 22.22138, 2.5629997e-06, -0.1939205, 1.9586856, 0.61627364, 0.13085794)
+transform = Transform3D(-0.19392024, -9.536743e-07, -22.221375, -2.5896602e-06, 22.222225, -9.536743e-07, 22.22138, 2.5816262e-06, -0.19392025, 2.2364783, 0.62523556, 0.13328218)
 
 [node name="shutter" type="MeshInstance3D" parent="camera_controler/Camera3D/Sketchfab_Scene" unique_id=1171354626]
 transform = Transform3D(1, 0, 0, -2.9802322e-08, 1, 0, 0, -3.0267984e-09, 1, -1.7063292, 0.9165921, -0.27002382)

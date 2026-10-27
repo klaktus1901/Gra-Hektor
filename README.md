@@ -67,6 +67,8 @@
 - fmod-gdextension by utopia-rise
 
 ## Assety i ich autorzy:
+### Shadery:
+- Szyba z efektem kropel: https://godotshaders.com/shader/rain-on-glass-2/
 
 ### Kod
 - Podstawowy ruch gracza i camera bob: FirstPersonController by LegionGames
@@ -78,6 +80,8 @@
 - Army soldier Character - joneborden123 - https://sketchfab.com/3d-models/army-soldier-character-cc995450452744ec8f852d8bf5f335d6
 - Outlast Camera - Eveston - Elite Big Speakerman - Hugo - https://sketchfab.com/3d-models/outlast-camera-6bb7d3475e8b47048a439cea1790ac67
 - FP arms - DJMaesen - https://sketchfab.com/3d-models/fp-arms-06ee1407117d4e5ab343becb4ee44bb6
+- Door wooden - 5MB - Mehdi Shahsavan - https://sketchfab.com/3d-models/door-wooden-5mb-6a7e720d4a394dbbbce172eab86e1a50
+- Wooden door - HASSAN - https://sketchfab.com/3d-models/wooden-door-8726b6c219a54ed585e096f267c2a35e
 
 ### SFX
 
