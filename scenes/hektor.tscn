@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cq1truwwyod3b"]
 
+[ext_resource type="Script" uid="uid://cm1ypma4s1fl7" path="res://scripts/hektor.gd" id="1_dggev"]
 [ext_resource type="Texture2D" uid="uid://bnhb7qpnwgted" path="res://textures/camo_net_02/camo_net_02_D.png" id="1_oo6gr"]
 [ext_resource type="PackedScene" uid="uid://85neau1g6rh4" path="res://models/hektor/sketchfab_scene.tscn" id="2_4oifp"]
 [ext_resource type="PackedScene" uid="uid://bula3565eym6e" path="res://models/helmet/m1_steel_helmet_wnet.glb" id="3_dggev"]
@@ -32,9 +33,16 @@ radius = 0.26660156
 height = 0.9384365
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=369677241]
+script = ExtResource("1_dggev")
 
-[node name="SoftBody3D" type="SoftBody3D" parent="." unique_id=50240261]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.025732085, 2.292364, 0.049539044)
+[node name="Sketchfab_Scene" parent="." unique_id=241296527 instance=ExtResource("2_4oifp")]
+transform = Transform3D(0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, 0, 0, 0)
+
+[node name="Sketchfab_Scene2" parent="." unique_id=1333456953 instance=ExtResource("3_dggev")]
+transform = Transform3D(-0.1, 0, -1.509958e-08, 0, 0.1, 0, 1.509958e-08, 0, -0.1, 0, 2.2117124, -0.011828117)
+
+[node name="SoftBody3D" type="SoftBody3D" parent="Sketchfab_Scene2" unique_id=50240261]
+transform = Transform3D(-10, 1.509958e-06, -6.600236e-14, 0, -4.3711393e-07, -10, -1.509958e-06, -10, 4.3711393e-07, -0.2573207, 0.80651855, -0.61367166)
 material_override = SubResource("StandardMaterial3D_lgght")
 mesh = SubResource("QuadMesh_oikfc")
 collision_layer = 4
@@ -45,15 +53,6 @@ pinned_points = [777]
 attachments/0/point_index = 777
 attachments/0/spatial_attachment_path = NodePath("")
 attachments/0/offset = Vector3(0, 0, 0)
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1624609907]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5096351, 1.9518633)
-
-[node name="Sketchfab_Scene" parent="." unique_id=241296527 instance=ExtResource("2_4oifp")]
-transform = Transform3D(0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, 0, 0, 0)
-
-[node name="Sketchfab_Scene2" parent="." unique_id=1333456953 instance=ExtResource("3_dggev")]
-transform = Transform3D(-0.1, 0, -1.509958e-08, 0, 0.1, 0, 1.509958e-08, 0, -0.1, 0, 2.2117124, -0.011828117)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1285802121]
 collision_layer = 4

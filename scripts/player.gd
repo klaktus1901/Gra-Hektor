@@ -30,7 +30,7 @@ func take_photo():
 	$camera_controler/Camera3D/Sketchfab_Scene/shutter.hide()
 	$camera_controler/Camera3D/Sketchfab_Scene/SpotLight3D.show()
 	$camera_controler/Camera3D/Sketchfab_Scene/SubViewport.render_target_update_mode = 1
-	await get_tree().create_timer(0.02).timeout
+	await get_tree().create_timer(0.05).timeout
 	$camera_controler/Camera3D/Sketchfab_Scene/SpotLight3D.hide()
 	await get_tree().create_timer(0.5).timeout
 	can_flash = true
